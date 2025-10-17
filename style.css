@@ -83,6 +83,27 @@ img.photo:hover {
   font-size: 2.5rem;
   color: var(--primary);
 }
+.hero p {
+  font-size: 1.2rem;
+}
+
+.btn-cv {
+  width: 10%;
+  background-color: var(--card-bg);
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 20px;
+  transition: all .12s ease-in-out;
+  margin-top: 1.25rem;
+  display: inline-block;
+}
+.btn-cv:hover {
+  transition: all .12s ease-in-out;
+  --move: 4px;
+  --bg-move: 10px;
+}
 
 .section {
   padding: 3rem 2rem;
