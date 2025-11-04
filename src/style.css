@@ -135,6 +135,7 @@ img.photo:hover {
 .project-card {
   background-color: var(--card-bg);
   padding: 1.5rem;
+  padding-top: .25rem;
   border-radius: 12px;
   transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -178,6 +179,7 @@ img.photo:hover {
 .experience-card {
   background-color: var(--card-bg);
   padding: 1.5rem;
+  padding-top: .25rem;
   border-radius: 12px;
   margin-bottom: 16px;
   transition: transform 0.2s, box-shadow 0.2s;
@@ -231,6 +233,12 @@ img.photo:hover {
   gap: 0.5rem;
 }
 
+#message{
+  max-width: 600px;
+  min-width: 100%;
+  min-height: 3em;
+}
+
 .form-group label {
   font-size: 0.9rem;
   color: var(--hover);
@@ -260,7 +268,8 @@ img.photo:hover {
   width: 100%;
   cursor: pointer;
   border: none;
-  color: var(--primary);
+  background-color: var(--primary);
+  color: white;
 }
 
 .contact-form .btn-cv:disabled {
@@ -275,10 +284,8 @@ img.photo:hover {
 .contact-success {
   padding: 3rem 1rem;
   text-align: center;
-  background-color: var(--section-bg);
   max-width: 600px;
   margin: 3rem auto;
-  border-radius: 12px;
 }
 .contact-success h3 {
   color: var(--primary);

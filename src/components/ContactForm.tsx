@@ -1,10 +1,15 @@
 import { useForm, ValidationError } from '@formspree/react';
+import { useInView } from 'react-intersection-observer';
 import contactLogo from '../assets/images/contact.png';
 
 const FORM_ID = "mkgplajw";
 
 function ContactForm() {
     const [state, handleSubmit] = useForm(FORM_ID);
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.2,
+    });
 
     if (state.succeeded) {
         return (
@@ -22,7 +27,7 @@ function ContactForm() {
     }
 
     return (
-        <section id="contact" className="section contact">
+        <section id="contact" className={`section contact`}>
             <div className="title-container">
                 <img src={contactLogo} alt="logo contact" />
                 <h2>Mon profil vous intéresse ?</h2>
@@ -31,7 +36,7 @@ function ContactForm() {
                 N'hésitez pas à me laisser un message directement ici.
             </p>
 
-            <form onSubmit={handleSubmit} className="contact-form">
+            <form onSubmit={handleSubmit} className={`contact-form animate-on-scroll ${inView ? 'is-visible' : ''}`} ref={ref}>
                 <div className="form-group">
                     <label htmlFor="email">
                         Votre Email
