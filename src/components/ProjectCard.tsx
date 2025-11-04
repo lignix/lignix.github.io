@@ -1,4 +1,5 @@
 import CardBtn from "./CardBtn";
+import { useInView } from 'react-intersection-observer';
 
 interface ProjectCardProps {
     title: string;
@@ -9,9 +10,14 @@ interface ProjectCardProps {
 
 function ProjectCard(props: ProjectCardProps) {
     const { title, description, link, imageUrl } = props;
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.2,
+    });
 
     return (
-        <div className="project-card">
+        <div ref={ref}
+            className={`project-card animate-on-scroll ${inView ? 'is-visible' : ''}`}>
             <h3>{title}</h3>
 
             {imageUrl && (
