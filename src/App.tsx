@@ -1,11 +1,13 @@
+// src/App.tsx
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
-import Experience from './components/Experiences';
+import Experiences from './components/Experiences';
 import Projects from './components/Projects';
-import Footer from './components/Footer';
 import ContactForm from './components/ContactForm';
+import Footer from './components/Footer';
+import LanguageSwitch from './components/LanguageSwitch';
 
 function App() {
   return (
@@ -15,11 +17,13 @@ function App() {
         <Hero />
         <About />
         <Services />
-        <Experience />
+        <Experiences />
         <Projects />
         <ContactForm />
       </main>
       <Footer />
+      
+      <LanguageSwitch /> 
     </>
   );
 }

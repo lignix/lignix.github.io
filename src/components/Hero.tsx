@@ -1,14 +1,18 @@
+import { useLanguage } from '../context/LanguageContext';
+
 function Hero() {
+  const { t } = useLanguage(); // On récupère 't' (les textes traduits)
+
   return (
     <section id="top" className="hero">
-      <h1>Hello 👋, je suis Charles Bouvier</h1>
+      <h1>{t.hero.greeting}</h1>
       <p>
-        Développeur Full Stack.<br />
-        Actuellement <strong>Freelance</strong> et à l'écoute d'opportunités en <strong>CDI</strong>.
+        {t.hero.subtitle}<br />
+        {t.hero.status}
       </p>
       <div id="cv">
-        <a href="/CV.pdf?v=3" className="btn-cv">
-          <span>Télécharger mon CV</span>
+        <a href={t.hero.cvLink} className="btn-cv">
+          <span>{t.hero.cvBtn}</span>
         </a>
       </div>
     </section>

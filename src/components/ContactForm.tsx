@@ -1,10 +1,12 @@
 import { useForm, ValidationError } from '@formspree/react';
 import { useInView } from 'react-intersection-observer';
-import contactLogo from '../assets/images/contact.png';
+import contactLogo from '../assets/images/contact.png'; 
+import { useLanguage } from '../context/LanguageContext'; 
 
 const FORM_ID = "mkgplajw";
 
 function ContactForm() {
+    const { t } = useLanguage();
     const [state, handleSubmit] = useForm(FORM_ID);
     const { ref, inView } = useInView({
         triggerOnce: true,
@@ -16,11 +18,11 @@ function ContactForm() {
             <section id="contact" className="section contact">
                 <div className="title-container">
                     <img src={contactLogo} alt="logo contact" />
-                    <h2>Mon profil vous intéresse ?</h2>
+                    <h2>{t.contact.title}</h2>
                 </div>
                 <div className="contact-success">
-                    <h3>Merci !</h3>
-                    <p>Votre message a bien été envoyé. Je vous répondrai rapidement.</p>
+                    <h3>{t.contact.successTitle}</h3>
+                    <p>{t.contact.successMsg}</p>
                 </div>
             </section>
         );
@@ -30,16 +32,16 @@ function ContactForm() {
         <section id="contact" className={`section contact`}>
             <div className="title-container">
                 <img src={contactLogo} alt="logo contact" />
-                <h2>Mon profil vous intéresse ?</h2>
+                <h2>{t.contact.title}</h2>
             </div>
             <p style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                N'hésitez pas à me laisser un message directement ici.
+                {t.contact.subtitle}
             </p>
 
             <form onSubmit={handleSubmit} className={`contact-form animate-on-scroll ${inView ? 'is-visible' : ''}`} ref={ref}>
                 <div className="form-group">
                     <label htmlFor="email">
-                        Votre Email
+                        {t.contact.emailLabel}
                     </label>
                     <input
                         id="email"
@@ -57,7 +59,7 @@ function ContactForm() {
 
                 <div className="form-group">
                     <label htmlFor="message">
-                        Votre Message
+                        {t.contact.messageLabel}
                     </label>
                     <textarea
                         id="message"
@@ -74,7 +76,7 @@ function ContactForm() {
                 </div>
 
                 <button type="submit" className="btn-cv" disabled={state.submitting}>
-                    {state.submitting ? 'Envoi en cours...' : 'Envoyer'}
+                    {state.submitting ? t.contact.sending : t.contact.sendBtn}
                 </button>
             </form>
         </section>
