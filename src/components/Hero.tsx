@@ -1,7 +1,7 @@
 import { useLanguage } from '../context/LanguageContext';
 
 function Hero() {
-  const { t } = useLanguage(); // On récupère 't' (les textes traduits)
+  const { t } = useLanguage();
 
   return (
     <section id="top" className="hero">

@@ -1,7 +1,6 @@
 import { createContext, useState, useContext, type ReactNode } from 'react';
 import { translations } from '../translations';
 
-// On définit le type de notre contexte
 type Language = 'fr' | 'en';
 
 interface LanguageContextType {

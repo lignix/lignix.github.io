@@ -5,11 +5,12 @@ interface ProjectCardProps {
     title: string;
     description: string;
     link: string;
+    link2?: string;
     imageUrl?: string;
 }
 
 function ProjectCard(props: ProjectCardProps) {
-    const { title, description, link, imageUrl } = props;
+    const { title, description, link, imageUrl, link2 } = props;
     const { ref, inView } = useInView({
         triggerOnce: true,
         threshold: 0.2,
@@ -21,14 +22,17 @@ function ProjectCard(props: ProjectCardProps) {
             <h3>{title}</h3>
 
             {imageUrl && (
-                <img src={imageUrl} alt={`Aperçu du projet ${title}`} />
+            <img src={imageUrl} alt={`Aperçu du projet ${title}`} />
             )}
 
             <p>
-                {description}
+            {description}
             </p>
 
-            <CardBtn text="Voir le projet" link={link} />
+            <div className="button-container">
+            <CardBtn text="Github" link={link} />
+            {link2 && <CardBtn text="Visiter le projet" link={link2} />}
+            </div>
         </div>
     );
 }

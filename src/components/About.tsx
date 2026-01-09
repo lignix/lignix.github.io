@@ -1,4 +1,3 @@
-// src/components/About.tsx
 import aboutLogo from '../assets/images/about.png';
 import univPhoto from '../assets/images/université.jpg';
 import freelancePhoto from '../assets/images/freelance.png';
@@ -6,7 +5,7 @@ import AboutBlock from './AboutBlock';
 import { useLanguage } from '../context/LanguageContext';
 
 function About() {
-  const { t } = useLanguage(); // ⬅️ HOOK
+  const { t } = useLanguage();
 
   return (
     <section id="about" className="section about">

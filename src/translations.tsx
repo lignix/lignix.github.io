@@ -1,5 +1,3 @@
-// src/translations.tsx
-
 export const translations = {
   fr: {
     header: {
@@ -36,7 +34,7 @@ export const translations = {
           Cela me permet de travailler sur des projets variés et de continuer à monter 
           en compétence sur mes technologies de prédilection (React, .NET, Unity).
           <br /><br />
-          En parallèle, je suis <strong>activement à la recherche d'un CDI</strong> 
+          En parallèle, je suis <strong>activement à la recherche d'un CDI </strong> 
           pour intégrer une équipe technique ambitieuse et m'investir sur le long terme 
           dans des projets d'envergure.
         </>
@@ -103,7 +101,7 @@ export const translations = {
           This allows me to work on various projects and keep improving my skills 
           on my favorite technologies (React, .NET, Unity).
           <br /><br />
-          In parallel, I am <strong>actively looking for a permanent position</strong> 
+          In parallel, I am <strong>actively looking for a permanent position </strong> 
           to join an ambitious technical team and commit long-term 
           to large-scale projects.
         </>
