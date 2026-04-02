@@ -15,7 +15,7 @@ export const translations = {
         </>
       ),
       cvBtn: "Télécharger mon CV",
-      cvLink: "/CV.pdf?v=3"
+      cvLink: "/CV_React.pdf?v=1"
     },
     about: {
       title: "Mon Parcours",

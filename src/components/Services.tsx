@@ -9,17 +9,17 @@ function Services() {
   const servicesData = [
     {
       title: t.services.web.title,
-      icon: "💻", 
+      icon: "💻",
       desc: t.services.web.desc
     },
     {
       title: t.services.freelance.title,
-      icon: "🚀", 
+      icon: "🚀",
       desc: t.services.freelance.desc
     },
     {
       title: t.services.game.title,
-      icon: "🎮", 
+      icon: "🎮",
       desc: t.services.game.desc
     }
   ];
@@ -30,11 +30,11 @@ function Services() {
         <img src={servicesLogo} alt="logo services" />
         <h2>{t.services.title}</h2>
       </div>
-      
-      <div 
+
+      <div
         ref={ref}
         className={`project-grid animate-on-scroll ${inView ? 'is-visible' : ''}`}
-        style={{ marginTop: '2rem' }}
+        style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}
       >
         {servicesData.map((service, index) => (
           <div key={index} className="project-card" style={{ textAlign: 'center' }}>
