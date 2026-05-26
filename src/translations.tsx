@@ -11,11 +11,11 @@ export const translations = {
       subtitle: "Développeur Full Stack.",
       status: (
         <>
-          Actuellement <strong>Freelance</strong> et à l'écoute d'opportunités en <strong>CDI</strong>.
+          Actuellement en recherche d'opportunités en <strong>CDI</strong> et <strong>Freelance</strong>.
         </>
       ),
       cvBtn: "Télécharger mon CV",
-      cvLink: "/CV_React.pdf?v=1"
+      cvLink: "/fullstack.pdf?v=1"
     },
     about: {
       title: "Mon Parcours",
@@ -78,7 +78,7 @@ export const translations = {
       subtitle: "Full Stack Developer.",
       status: (
         <>
-          Currently <strong>Freelancing</strong> and open to <strong>Permanent (CDI)</strong> opportunities.
+          Currently open to <strong>Permanent (CDI)</strong> and <strong>Freelance</strong> opportunities.
         </>
       ),
       cvBtn: "Download my Resume",
