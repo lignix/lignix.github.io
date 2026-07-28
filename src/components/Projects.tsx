@@ -14,6 +14,47 @@ function Projects() {
                 <h2>{t.header.projects}</h2>
             </div>
 
+            <h3>{lang === 'fr' ? "Projets Personnels" : "Personal Projects"}</h3>
+            
+            <div className="masonry-grid">
+                {/* === COLONNE DE GAUCHE === */}
+                <div className="masonry-column">
+                    <ProjectCard
+                        title="Portfolio"
+                        description={
+                            lang === 'fr'
+                                ? "Le site sur lequel vous êtes actuellement. Présente mes compétences et mes projets. Codé avec React et TypeScript."
+                                : "The website you are currently on. Showcases my skills and projects. Coded with React and TypeScript."
+                        }
+                        link="https://github.com/lignix/lignix.github.io"
+                    />
+                    <ProjectCard
+                        title="Yatai 8"
+                        description={
+                            lang === 'fr'
+                                ? "Jeu 3D basé sur la détection d'anomalies dans une boucle spatiale. Développé en C# avec Unity."
+                                : "A 3D game based on anomaly detection in a spatial loop. Developed in C# with Unity."
+                        }
+                        link="https://github.com/lignix/Yatai-8"
+                    />
+                </div>
+
+                {/* === COLONNE DE DROITE === */}
+                <div className="masonry-column">
+                    <ProjectCard
+                        title="Readability Radar"
+                        description={
+                            lang === 'fr'
+                                ? "Aide les apprenants en japonais à évaluer la difficulté de sous-titres, articles ou fichiers texte instantanément..."
+                                : "Helps Japanese learners evaluate the difficulty of subtitles, articles, or text files instantly..."
+                        }
+                        link="https://github.com/lignix/readability-radar"
+                        link2="https://radar.charlesbouvier.dev/"
+                        imageUrl={ReadabilityRadarImg}
+                    />
+                </div>
+            </div>
+
             <h3>{lang === 'fr' ? "Projets Scolaires notables" : "Notable School Projects"}</h3>
             
             <div className="masonry-grid">
@@ -50,38 +91,6 @@ function Projects() {
                                 : "P2P marketplace platform, developed with Spring Boot (backend) and React (frontend)."
                         }
                         link="https://github.com/lignix/amazing-site-vente"
-                    />
-                </div>
-            </div>
-
-            <h3>{lang === 'fr' ? "Projets Personnels" : "Personal Projects"}</h3>
-            
-            <div className="masonry-grid">
-                {/* === COLONNE DE GAUCHE === */}
-                <div className="masonry-column">
-                    <ProjectCard
-                        title="Portfolio"
-                        description={
-                            lang === 'fr'
-                                ? "Le site sur lequel vous êtes actuellement. Présente mes compétences et mes projets. Codé avec React et TypeScript."
-                                : "The website you are currently on. Showcases my skills and projects. Coded with React and TypeScript."
-                        }
-                        link="https://github.com/lignix/lignix.github.io"
-                    />
-                </div>
-
-                {/* === COLONNE DE DROITE === */}
-                <div className="masonry-column">
-                    <ProjectCard
-                        title="Readability Radar"
-                        description={
-                            lang === 'fr'
-                                ? "Aide les apprenants en japonais à évaluer la difficulté de sous-titres, articles ou fichiers texte instantanément..."
-                                : "Helps Japanese learners evaluate the difficulty of subtitles, articles, or text files instantly..."
-                        }
-                        link="https://github.com/lignix/readability-radar"
-                        link2="https://radar.charlesbouvier.dev/"
-                        imageUrl={ReadabilityRadarImg}
                     />
                 </div>
             </div>
