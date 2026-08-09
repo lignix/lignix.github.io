@@ -15,7 +15,7 @@ export const translations = {
         </>
       ),
       cvBtn: "Télécharger mon CV",
-      cvLink: "/fullstack.pdf?v=1"
+      cvLink: "/CV.pdf"
     },
     about: {
       title: "Mon Parcours",
@@ -82,7 +82,7 @@ export const translations = {
         </>
       ),
       cvBtn: "Download my Resume",
-      cvLink: "/Resume.pdf?v=1"
+      cvLink: "/CV_EN.pdf"
     },
     about: {
       title: "My Background",
