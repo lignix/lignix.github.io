@@ -1,25 +1,13 @@
-import githubLogo from '../assets/images/github-mark.svg';
-import linkedInLogo from '../assets/images/LinkedIn_icon.svg';
-import maltLogo from '../assets/images/malt.svg';
+import { useTranslations } from "next-intl";
 
+export function Footer() {
+  const t = useTranslations("footer");
 
-function Footer() {
   return (
-    <footer>
-      <p>&copy; 2025 Charles Bouvier</p>
-      <div className="socials">
-        <a href="https://github.com/lignix" target="_blank" rel="noopener noreferrer" title="Mon profil GitHub">
-          <img src={githubLogo} alt="logo github" />
-        </a>
-        <a href="https://www.linkedin.com/in/charles-bouvier/" target="_blank" rel="noopener noreferrer" title="Mon profil LinkedIn">
-          <img src={linkedInLogo} alt="logo linkedIn" />
-        </a>
-        <a href="https://www.malt.fr/profile/charlesbouvier" target="_blank" rel="noopener noreferrer" title="Mon profil Malt">
-          <img src={maltLogo} alt="logo malt" />
-        </a>
+    <footer className="border-t border-line">
+      <div className="mx-auto w-full max-w-5xl px-6 py-8 font-display text-sm text-muted md:px-10">
+        © {new Date().getFullYear()} Charles Bouvier. {t("builtWith")}
       </div>
     </footer>
   );
 }
-
-export default Footer;

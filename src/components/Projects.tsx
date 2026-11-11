@@ -1,101 +1,71 @@
-import projectsLogo from '../assets/images/projects.png';
-import lightsRemnantsGif from '../assets/images/lightsRemnants.gif';
-import ReadabilityRadarImg from '../assets/images/readabilityRadar.png';
-import ProjectCard from './ProjectCard';
-import { useLanguage } from '../context/LanguageContext';
+import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { projects } from "@/content/site";
+import { Reveal } from "./Reveal";
+import { Section } from "./Section";
 
-function Projects() {
-    const { lang, t } = useLanguage();
+export function Projects() {
+  const t = useTranslations("projects");
 
-    return (
-        <section id="projects" className="section projects">
-            <div className="title-container">
-                <img src={projectsLogo} alt="logo projects" />
-                <h2>{t.header.projects}</h2>
+  return (
+    <Section id="projects" title={t("title")}>
+      <ul className="divide-y divide-line border-y border-line">
+        {projects.map((project, index) => (
+          <Reveal
+            as="li"
+            key={project.id}
+            delay={index * 80}
+            className="grid gap-6 py-8 first:pt-6 last:pb-6 md:grid-cols-[1fr_auto] md:gap-10"
+          >
+            <div>
+              <h3 className="font-display text-xl font-semibold tracking-tight">
+                {t(`items.${project.id}.title`)}
+              </h3>
+              <p className="mt-2 max-w-[60ch] text-pretty text-muted">
+                {t(`items.${project.id}.description`)}
+              </p>
+
+              <ul
+                aria-label={t("stack")}
+                className="mt-4 flex flex-wrap gap-x-5 gap-y-1 font-display text-sm font-medium"
+              >
+                {project.stack.map((tech) => (
+                  <li key={tech}>{tech}</li>
+                ))}
+              </ul>
+
+              {project.links.length > 0 && (
+                <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2 font-display text-sm font-semibold">
+                  {project.links.map((link) => (
+                    <li key={link.kind}>
+                      <a
+                        href={link.href}
+                        className="text-accent underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {t(`links.${link.kind}`)}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
 
-            <h3>{lang === 'fr' ? "Projets Personnels" : "Personal Projects"}</h3>
-            
-            <div className="masonry-grid">
-                {/* === COLONNE DE GAUCHE === */}
-                <div className="masonry-column">
-                    <ProjectCard
-                        title="Portfolio"
-                        description={
-                            lang === 'fr'
-                                ? "Le site sur lequel vous êtes actuellement. Présente mes compétences et mes projets. Codé avec React et TypeScript."
-                                : "The website you are currently on. Showcases my skills and projects. Coded with React and TypeScript."
-                        }
-                        link="https://github.com/lignix/lignix.github.io"
-                    />
-                    <ProjectCard
-                        title="Yatai 8"
-                        description={
-                            lang === 'fr'
-                                ? "Jeu 3D basé sur la détection d'anomalies dans une boucle spatiale. Développé en C# avec Unity."
-                                : "A 3D game based on anomaly detection in a spatial loop. Developed in C# with Unity."
-                        }
-                        link="https://github.com/lignix/Yatai-8"
-                    />
-                </div>
-
-                {/* === COLONNE DE DROITE === */}
-                <div className="masonry-column">
-                    <ProjectCard
-                        title="Readability Radar"
-                        description={
-                            lang === 'fr'
-                                ? "Aide les apprenants en japonais à évaluer la difficulté de sous-titres, articles ou fichiers texte instantanément..."
-                                : "Helps Japanese learners evaluate the difficulty of subtitles, articles, or text files instantly..."
-                        }
-                        link="https://github.com/lignix/readability-radar"
-                        link2="https://radar.charlesbouvier.dev/"
-                        imageUrl={ReadabilityRadarImg}
-                    />
-                </div>
-            </div>
-
-            <h3>{lang === 'fr' ? "Projets Scolaires notables" : "Notable School Projects"}</h3>
-            
-            <div className="masonry-grid">
-                {/* === COLONNE DE GAUCHE === */}
-                <div className="masonry-column">
-                    <ProjectCard
-                        title="ShopFinder"
-                        description={
-                            lang === 'fr'
-                                ? "Une carte interactive pour trouver des magasins autour d'un point. Développée avec Leaflet et utilisant du php."
-                                : "An interactive map to find stores around a location. Developed with Leaflet and PHP."
-                        }
-                        link="https://github.com/lignix/ShopFinder"
-                    />
-                    <ProjectCard
-                        title="Light's Remnants"
-                        description={
-                            lang === 'fr'
-                                ? "Un jeu de plateforme 2D développé sur Unity en C#. Le joueur incarne un personnage qui doit traverser des niveaux..."
-                                : "A 2D platformer game developed on Unity in C#. The player embodies a character who must cross levels..."
-                        }
-                        link="https://github.com/lignix/lights-remnants" 
-                        imageUrl={lightsRemnantsGif}
-                    />
-                </div>
-
-                {/* === COLONNE DE DROITE === */}
-                <div className="masonry-column">
-                    <ProjectCard
-                        title="Site de Vente"
-                        description={
-                            lang === 'fr'
-                                ? "Plateforme de vente d'objets entre particuliers, développée en Spring Boot (backend) et React (frontend)."
-                                : "P2P marketplace platform, developed with Spring Boot (backend) and React (frontend)."
-                        }
-                        link="https://github.com/lignix/amazing-site-vente"
-                    />
-                </div>
-            </div>
-        </section>
-    );
+            {project.image && (
+              <Image
+                src={project.image.src}
+                width={project.image.width}
+                height={project.image.height}
+                alt={t(`items.${project.id}.imageAlt`)}
+                sizes="(min-width: 768px) 20rem, 100vw"
+                loading="lazy"
+                className="aspect-[16/10] h-auto w-full border border-line object-cover md:w-80"
+              />
+            )}
+          </Reveal>
+        ))}
+      </ul>
+    </Section>
+  );
 }
-
-export default Projects;
