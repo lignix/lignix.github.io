@@ -1,9 +1,9 @@
+// src/App.tsx
 import Header from './components/Header';
 import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
 import Experiences from './components/Experiences';
 import Projects from './components/Projects';
+import About from './components/About';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import LanguageSwitch from './components/LanguageSwitch';
@@ -14,14 +14,12 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <About />
-        <Services />
         <Experiences />
         <Projects />
+        <About />
         <ContactForm />
       </main>
       <Footer />
-      
       <LanguageSwitch /> 
     </>
   );

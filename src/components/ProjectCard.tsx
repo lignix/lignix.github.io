@@ -17,21 +17,20 @@ function ProjectCard(props: ProjectCardProps) {
     });
 
     return (
-        <div ref={ref}
-            className={`project-card animate-on-scroll ${inView ? 'is-visible' : ''}`}>
-            <h3>{title}</h3>
+        <div ref={ref} className={`project-card animate-on-scroll ${inView ? 'is-visible' : ''}`}>
+            <div className="project-card-content">
+                <h3>{title}</h3>
 
-            {imageUrl && (
-            <img src={imageUrl} alt={`Aperçu du projet ${title}`} />
-            )}
+                {imageUrl && (
+                    <img src={imageUrl} alt={`Aperçu du projet ${title}`} />
+                )}
 
-            <p>
-            {description}
-            </p>
+                <p>{description}</p>
+            </div>
 
             <div className="button-container">
-            <CardBtn text="Github" link={link} />
-            {link2 && <CardBtn text="Visiter le projet" link={link2} />}
+                <CardBtn text="Github" link={link} />
+                {link2 && <CardBtn text={link2.includes('steampowered') ? "Voir sur Steam" : "Visiter le projet"} link={link2} />}
             </div>
         </div>
     );
