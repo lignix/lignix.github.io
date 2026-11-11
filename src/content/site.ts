@@ -9,7 +9,7 @@ export const contact = {
 };
 
 export const cv: Record<string, string | null> = {
-  en: null,
+  en: "/cv_en.pdf",
   fr: "/cv_fr.pdf",
 };
 
@@ -26,8 +26,7 @@ export type ProjectImage = {
 
 export type ProjectId = "marketplace" | "yatai8" | "readabilityRadar" | "lightsRemnants";
 
-// To add a screenshot to a project, put the file in /public/projects/ and fill `image`.
-// Recommended: WebP, 1600 px wide, around 16:10.
+// around 16:10.
 export const projects: {
   id: ProjectId;
   stack: string[];
@@ -35,16 +34,10 @@ export const projects: {
   image: ProjectImage | null;
 }[] = [
   {
-    id: "marketplace",
-    stack: ["Spring Boot", "React", "Microservices"],
-    links: [{ kind: "repo", href: "https://github.com/lignix/amazing-site-vente" }],
-    image: null,
-  },
-  {
     id: "yatai8",
     stack: ["Unity", "C#"],
     links: [{ kind: "steam", href: "https://store.steampowered.com/app/5080810/Yatai_8/" }],
-    image: null,
+    image: { src: "/projects/yatai8.webp", width: 740, height: 416 },
   },
   {
     id: "readabilityRadar",
@@ -60,6 +53,12 @@ export const projects: {
     stack: ["Unity", "C#"],
     links: [{ kind: "repo", href: "https://github.com/lignix/lights-remnants" }],
     image: { src: "/projects/lights-remnants.webp", width: 800, height: 447 },
+  },
+  {
+    id: "marketplace",
+    stack: ["Spring Boot", "React", "Microservices"],
+    links: [{ kind: "repo", href: "https://github.com/lignix/amazing-site-vente" }],
+    image: null,
   },
 ];
 
