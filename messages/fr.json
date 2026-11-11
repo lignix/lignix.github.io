@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "title": "Charles Bouvier – Développeur fullstack",
+    "description": "Portfolio de Charles Bouvier, développeur fullstack (React, TypeScript, Java, .NET) basé en Île-de-France et en Normandie."
+  },
+  "common": {
+    "skipToContent": "Aller au contenu",
+    "language": "Langue",
+    "mainNavigation": "Navigation principale"
+  },
+  "nav": {
+    "projects": "Projets",
+    "experience": "Expérience",
+    "skills": "Compétences",
+    "contact": "Contact"
+  },
+  "hero": {
+    "status": "Disponible pour un CDI",
+    "role": "Développeur fullstack",
+    "intro": "Je conçois des applications web, de l’interface à la base de données. Diplômé d’un BUT Informatique, j’ai réalisé deux stages en développement front-end (dont un en anglais, dans une équipe internationale en télétravail) et je cherche aujourd’hui un CDI de développeur fullstack.",
+    "viewProjects": "Voir mes projets",
+    "contactMe": "Me contacter",
+    "downloadCv": "Télécharger mon CV",
+    "location": "Basé en Île-de-France et en Normandie"
+  },
+  "projects": {
+    "title": "Projets",
+    "links": {
+      "steam": "Voir sur Steam",
+      "repo": "Code source",
+      "demo": "Démo en ligne"
+    },
+    "items": {
+      "marketplace": {
+        "title": "Marketplace C2C",
+        "description": "Une plateforme où des particuliers se vendent des objets, construite sur une architecture en microservices avec Spring Boot et React.",
+        "imageAlt": "Capture d’écran de la marketplace C2C"
+      },
+      "yatai8": {
+        "title": "Yatai 8",
+        "description": "Un jeu d’horreur où il faut repérer des anomalies dans un espace qui boucle, développé avec Unity et C# et publié sur Steam.",
+        "imageAlt": "Capture d’écran de Yatai 8"
+      },
+      "readabilityRadar": {
+        "title": "Readability Radar",
+        "description": "Un outil pour les apprenants du japonais qui évalue la difficulté de sous-titres, d’articles et de fichiers texte (niveaux JLPT) et estime leur temps de lecture.",
+        "imageAlt": "Capture d’écran de Readability Radar"
+      },
+      "lightsRemnants": {
+        "title": "Light’s Remnants",
+        "description": "Un jeu de plateforme 2D développé avec Unity et C#, dans lequel le joueur guide un personnage à travers une série de niveaux.",
+        "imageAlt": "Capture animée de Light’s Remnants"
+      }
+    },
+    "stack": "Technologies"
+  },
+  "experience": {
+    "title": "Expérience",
+    "dev": "Développement",
+    "other": "Autres expériences",
+    "items": {
+      "wolters": {
+        "role": "Stagiaire développeur front-end",
+        "company": "Wolters Kluwer",
+        "place": "Bois-Colombes",
+        "period": "Mars – juin 2025",
+        "bullets": [
+          "Développement de scripts qui exportent des données en PDF et Excel, et les importent en base de données dans le format demandé par chaque client.",
+          "Conception de solutions automatisées pour générer des documents multilingues.",
+          "Maintenance de ces scripts pour plus de 50 entreprises clientes."
+        ]
+      },
+      "phraser": {
+        "role": "Stagiaire développeur front-end",
+        "company": "Phraser",
+        "place": "Télétravail, équipe anglophone",
+        "period": "Juin – août 2024",
+        "bullets": [
+          "Développement de l’interface d’un assistant IA pour artistes avec React, Next.js et Tailwind CSS.",
+          "Collaboration quotidienne en anglais au sein d’une équipe technique internationale."
+        ]
+      },
+      "sncf": {
+        "role": "Responsable informatique (CSIE)",
+        "company": "SNCF Voyageurs",
+        "place": "Argenteuil",
+        "period": "Oct. – déc. 2026",
+        "bullets": [
+          "Gestion et suivi des parcs informatiques, téléphoniques, des imprimantes et des stocks.",
+          "Pilotage et développement d’applications internes, et gestion des accès serveurs selon les règles SSI.",
+          "Interface avec e.SNCF et coordination avec ESTI."
+        ]
+      },
+      "leroy": {
+        "role": "Agent logistique (intérim)",
+        "company": "Leroy Merlin",
+        "place": "Montigny-lès-Cormeilles",
+        "period": "Déc. 2025 – sept. 2026",
+        "bullets": [
+          "Manutention, gestion d’inventaire, réception de marchandises et optimisation des flux de stocks."
+        ]
+      }
+    }
+  },
+  "skills": {
+    "title": "Compétences",
+    "groups": {
+      "frontend": "Front-end",
+      "backend": "Back-end",
+      "methods": "Méthodes",
+      "tools": "Outils",
+      "languages": "Langues"
+    },
+    "languages": [
+      "Français (natif)",
+      "Anglais (C1)",
+      "Japonais (N5, en apprentissage)",
+      "Allemand (A2)",
+      "Chinois (A1)"
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "text": "Je cherche un poste de développeur fullstack ou front-end en Île-de-France, en Normandie ou en télétravail complet. Le plus simple pour me joindre est l’e-mail.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "footer": {
+    "builtWith": "Réalisé avec Next.js et Tailwind CSS."
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "text": "Cette page n’existe pas ou a été déplacée.",
+    "home": "Retour à l’accueil"
+  }
+}

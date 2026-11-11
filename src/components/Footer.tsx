@@ -1,21 +1,13 @@
-// src/components/Footer.tsx
-import githubLogo from '../assets/images/github-mark.svg';
-import linkedInLogo from '../assets/images/LinkedIn_icon.svg';
+import { useTranslations } from "next-intl";
 
-function Footer() {
+export function Footer() {
+  const t = useTranslations("footer");
+
   return (
-    <footer>
-      <p>&copy; {new Date().getFullYear()} Charles Bouvier — Développeur Full Stack</p>
-      <div className="socials">
-        <a href="https://github.com/lignix" target="_blank" rel="noopener noreferrer" title="Mon profil GitHub">
-          <img src={githubLogo} alt="logo github" />
-        </a>
-        <a href="https://www.linkedin.com/in/charles-bouvier/" target="_blank" rel="noopener noreferrer" title="Mon profil LinkedIn">
-          <img src={linkedInLogo} alt="logo linkedIn" />
-        </a>
+    <footer className="border-t border-line">
+      <div className="mx-auto w-full max-w-5xl px-6 py-8 font-display text-sm text-muted md:px-10">
+        © {new Date().getFullYear()} Charles Bouvier. {t("builtWith")}
       </div>
     </footer>
   );
 }
-
-export default Footer;

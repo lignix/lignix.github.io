@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "title": "Charles Bouvier – Fullstack developer",
+    "description": "Portfolio of Charles Bouvier, fullstack developer (React, TypeScript, Java, .NET) based in Île-de-France and Normandy."
+  },
+  "common": {
+    "skipToContent": "Skip to content",
+    "language": "Language",
+    "mainNavigation": "Main navigation"
+  },
+  "nav": {
+    "projects": "Projects",
+    "experience": "Experience",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "status": "Open to a permanent position",
+    "role": "Fullstack developer",
+    "intro": "I build web applications from the interface to the database. I graduated from a BUT in Computer Science, completed two front-end internships (one in English with an international remote team), and I’m now looking for a permanent role as a fullstack developer.",
+    "viewProjects": "See my projects",
+    "contactMe": "Get in touch",
+    "downloadCv": "Download my CV",
+    "location": "Based in Île-de-France and Normandy"
+  },
+  "projects": {
+    "title": "Projects",
+    "links": {
+      "steam": "View on Steam",
+      "repo": "Source code",
+      "demo": "Live demo"
+    },
+    "items": {
+      "marketplace": {
+        "title": "C2C marketplace",
+        "description": "A platform where individuals sell items to each other, built on a microservices architecture with Spring Boot and React.",
+        "imageAlt": "Screenshot of the C2C marketplace"
+      },
+      "yatai8": {
+        "title": "Yatai 8",
+        "description": "A horror game about spotting anomalies in a looping space, built with Unity and C# and released on Steam.",
+        "imageAlt": "Screenshot of Yatai 8"
+      },
+      "readabilityRadar": {
+        "title": "Readability Radar",
+        "description": "A tool for Japanese learners that rates the difficulty of subtitles, articles and text files (JLPT levels) and estimates their reading time.",
+        "imageAlt": "Screenshot of Readability Radar"
+      },
+      "lightsRemnants": {
+        "title": "Light’s Remnants",
+        "description": "A 2D platformer built with Unity and C#, in which the player guides a character through a series of levels.",
+        "imageAlt": "Animated capture of Light’s Remnants"
+      }
+    },
+    "stack": "Technologies"
+  },
+  "experience": {
+    "title": "Experience",
+    "dev": "Development",
+    "other": "Other work",
+    "items": {
+      "wolters": {
+        "role": "Front-end developer intern",
+        "company": "Wolters Kluwer",
+        "place": "Bois-Colombes",
+        "period": "Mar – Jun 2025",
+        "bullets": [
+          "Built scripts that export data to PDF and Excel, and import it into databases in the format each client required.",
+          "Designed automated solutions to generate multilingual documents.",
+          "Maintained these scripts for more than 50 client companies."
+        ]
+      },
+      "phraser": {
+        "role": "Front-end developer intern",
+        "company": "Phraser",
+        "place": "Remote, English-speaking team",
+        "period": "Jun – Aug 2024",
+        "bullets": [
+          "Built the interface of an AI assistant for artists with React, Next.js and Tailwind CSS.",
+          "Worked every day in English with an international technical team."
+        ]
+      },
+      "sncf": {
+        "role": "IT manager (CSIE)",
+        "company": "SNCF Voyageurs",
+        "place": "Argenteuil",
+        "period": "Oct – Dec 2026",
+        "bullets": [
+          "Managed and tracked IT equipment, phones, printers and stock.",
+          "Ran and developed internal applications and managed server access under security (SSI) rules.",
+          "Liaised with e.SNCF and coordinated with ESTI."
+        ]
+      },
+      "leroy": {
+        "role": "Logistics associate (temp)",
+        "company": "Leroy Merlin",
+        "place": "Montigny-lès-Cormeilles",
+        "period": "Dec 2025 – Sep 2026",
+        "bullets": [
+          "Handled goods, inventory and deliveries, and optimized stock flows."
+        ]
+      }
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "groups": {
+      "frontend": "Front end",
+      "backend": "Back end",
+      "methods": "Methods",
+      "tools": "Tools",
+      "languages": "Languages"
+    },
+    "languages": [
+      "French (native)",
+      "English (C1)",
+      "Japanese (N5, learning)",
+      "German (A2)",
+      "Chinese (A1)"
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "text": "I’m looking for a fullstack or front-end role in Île-de-France, Normandy or fully remote. Email is the best way to reach me.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "footer": {
+    "builtWith": "Built with Next.js and Tailwind CSS."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "This page doesn’t exist or has moved.",
+    "home": "Back to the homepage"
+  }
+}

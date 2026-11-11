@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+/* Palette: pale blue paper, navy ink, strong blue accent. */
+:root {
+  --bg: #eef3fb;
+  --ink: #0d1b2e;
+  --muted: #46566e;
+  --line: #cdd8ea;
+  --accent: #1f4fd8;
+  --accent-ink: #ffffff;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0a1224;
+    --ink: #e6edfa;
+    --muted: #9db0d0;
+    --line: #1f2e4d;
+    --accent: #7aa2ff;
+    --accent-ink: #0a1224;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --font-display: "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Instrument Sans Variable", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 1.5rem;
+  }
+  /* Leave room for the sticky header (desktop only). */
+  @media (min-width: 768px) {
+    html {
+      scroll-padding-top: 5rem;
+    }
+  }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a {
+    text-underline-offset: 0.25em;
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -4rem;
+    z-index: 50;
+    padding: 0.5rem 1rem;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-family: var(--font-display);
+    transition: top 0.15s;
+  }
+  .skip-link:focus {
+    top: 1rem;
+  }
+
+  /* The name rises into place on load, on one line. */
+  .hero-name {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-variation-settings: "wdth" 78;
+    font-size: clamp(2.5rem, 10.6vw, 8.25rem);
+    line-height: 1;
+    letter-spacing: -0.035em;
+    white-space: nowrap;
+  }
+  .hero-line {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.1em;
+  }
+  .hero-line > span {
+    display: block;
+    animation: rise 0.95s cubic-bezier(0.2, 0.75, 0.1, 1) both;
+    animation-delay: var(--delay, 0ms);
+  }
+  @keyframes rise {
+    from {
+      transform: translateY(105%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  /* The rest of the hero follows the name. */
+  .hero-fade {
+    animation: fade-up 0.8s cubic-bezier(0.2, 0.75, 0.1, 1) both;
+    animation-delay: var(--delay, 0ms);
+  }
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* Sections fade in once as they scroll into view.
+     Only hidden when scripting is available, so content never depends on JS. */
+  @media (scripting: enabled) {
+    .reveal:not(.is-visible) {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    .reveal {
+      transition:
+        opacity 0.7s cubic-bezier(0.2, 0.75, 0.1, 1),
+        transform 0.7s cubic-bezier(0.2, 0.75, 0.1, 1);
+      transition-delay: var(--reveal-delay, 0ms);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-line > span,
+    .hero-fade {
+      animation: none;
+    }
+    .reveal:not(.is-visible) {
+      opacity: 1;
+      transform: none;
+    }
+    .reveal {
+      transition: none;
+    }
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.7rem 1.25rem;
+    border: 1.5px solid var(--ink);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .btn-primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--accent-ink);
+  }
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--accent);
+  }
+
+  .status-dot {
+    display: inline-block;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 9999px;
+    background: var(--accent);
+  }
+}
