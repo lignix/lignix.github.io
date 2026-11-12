@@ -1,6 +1,6 @@
 # Portfolio – Charles Bouvier
 
-Personal portfolio of Charles Bouvier, fullstack developer. Bilingual (English / French), fully static, deployed on GitHub Pages.
+Personal portfolio of Charles Bouvier, fullstack developer. Bilingual (English / French), fully static, hosted on Cloudflare.
 
 **Live site:** [charlesbouvier.dev](https://charlesbouvier.dev)
 
@@ -22,7 +22,7 @@ Personal portfolio of Charles Bouvier, fullstack developer. Bilingual (English /
 | Styling | [Tailwind CSS](https://tailwindcss.com/) v4 |
 | i18n | [next-intl](https://next-intl.dev/) |
 | Fonts | Bricolage Grotesque and Instrument Sans, self-hosted via [Fontsource](https://fontsource.org/) |
-| Hosting | GitHub Pages, deployed with GitHub Actions |
+| Hosting | Cloudflare Workers (static assets), deployed from GitHub |
 
 ## Getting started
 
@@ -48,7 +48,6 @@ npx serve out    # serves it locally
 messages/            Translations, one JSON file per language (en.json, fr.json)
 public/
   projects/          Project screenshots (WebP)
-  CNAME              Custom domain for GitHub Pages
 src/
   app/
     [locale]/        Localized layout and page
@@ -58,7 +57,8 @@ src/
   components/        Header, Hero, Projects, Experience, Skills, Contact...
   content/site.ts    Non-translatable data: links, stack, projects, skills
   i18n/              Routing, request config and navigation helpers
-.github/workflows/   Deployment to GitHub Pages
+wrangler.jsonc       Cloudflare deployment config (serves ./out, custom 404)
+.node-version        Node version used for builds
 ```
 
 ## Editing the content
@@ -76,7 +76,15 @@ src/
 
 ## Deployment
 
-Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds the site (`npm run build`) and publishes the `out/` folder to GitHub Pages. The custom domain is set by `public/CNAME` and in the repository's Pages settings.
+The site is a static export (`npm run build` writes it to `out/`) served by Cloudflare Workers static assets. Cloudflare's Git integration builds and deploys on every push to `main`:
+
+| Setting | Value |
+|---|---|
+| Production branch | `main` |
+| Build command | `npm run build` |
+| Deploy command | `npx wrangler deploy` |
+
+`wrangler.jsonc` points Cloudflare at `./out` and serves `404.html` (with a 404 status) for unknown URLs. The custom domain is attached to the Worker in the Cloudflare dashboard.
 
 ## Scripts
 
